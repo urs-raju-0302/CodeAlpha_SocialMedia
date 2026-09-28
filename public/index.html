@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeAlpha Social Media</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>CodeAlpha Social</h1>
+      <p>Task 2 — Social Media Application</p>
+    </div>
+    <div id="userArea" class="user-area hidden">
+      <span id="welcome"></span>
+      <button id="profileBtn" class="secondary">My Profile</button>
+      <button id="logoutBtn" class="danger">Logout</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="authSection" class="auth-grid">
+      <div class="card">
+        <h2>Register</h2>
+        <form id="registerForm">
+          <input id="regName" placeholder="Name" required>
+          <input id="regEmail" type="email" placeholder="Email" required>
+          <input id="regPassword" type="password" placeholder="Password (6+ characters)" required>
+          <button type="submit">Create Account</button>
+        </form>
+        <p id="registerMsg" class="message"></p>
+      </div>
+
+      <div class="card">
+        <h2>Login</h2>
+        <form id="loginForm">
+          <input id="loginEmail" type="email" placeholder="Email" required>
+          <input id="loginPassword" type="password" placeholder="Password" required>
+          <button type="submit">Login</button>
+        </form>
+        <p id="loginMsg" class="message"></p>
+      </div>
+    </section>
+
+    <section id="appSection" class="hidden">
+      <div class="layout">
+        <aside>
+          <div class="card">
+            <h2>My Profile</h2>
+            <div id="myProfile"></div>
+          </div>
+
+          <div class="card">
+            <h2>People</h2>
+            <div id="peopleList"></div>
+          </div>
+        </aside>
+
+        <section>
+          <div class="card">
+            <h2>Create Post</h2>
+            <form id="postForm">
+              <textarea id="postContent" rows="4" placeholder="Share something..." required></textarea>
+              <button type="submit">Publish Post</button>
+            </form>
+          </div>
+
+          <div class="card">
+            <div class="section-title">
+              <h2>Posts</h2>
+              <button id="refreshBtn" class="secondary">Refresh</button>
+            </div>
+            <div id="posts"></div>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <div id="profileModal" class="modal hidden">
+    <div class="modal-box">
+      <button id="closeModal" class="close">×</button>
+      <h2>Edit Profile</h2>
+      <form id="profileForm">
+        <input id="profileName" placeholder="Name" required>
+        <textarea id="profileBio" rows="4" placeholder="Bio"></textarea>
+        <button type="submit">Save Profile</button>
+      </form>
+      <p id="profileMsg" class="message"></p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
